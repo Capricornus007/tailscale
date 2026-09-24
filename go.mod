@@ -1,6 +1,6 @@
 module github.com/sagernet/tailscale
 
-go 1.25.5
+go 1.27.1
 
 require (
 	fyne.io/systray v1.11.1-0.20250812065214-4856ac3adc3c
