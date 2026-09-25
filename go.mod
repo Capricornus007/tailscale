@@ -17,6 +17,7 @@ require (
 	github.com/dblohm7/wingoes v0.0.0-20240119213807-a09d6be7affa
 	github.com/digitalocean/go-smbios v0.0.0-20180907143718-390a4f403a8e
 	github.com/djherbis/times v1.6.0
+	github.com/fatih/color v1.18.0
 	github.com/fogleman/gg v1.3.0
 	github.com/fxamacker/cbor/v2 v2.9.0
 	github.com/gaissmai/bart v0.26.1
@@ -28,6 +29,7 @@ require (
 	github.com/google/go-tpm v0.9.4
 	github.com/google/nftables v0.2.1-0.20240414091927-5e242ec57806
 	github.com/google/uuid v1.6.0
+	github.com/gorilla/csrf v1.7.3
 	github.com/hdevalence/ed25519consensus v0.2.0
 	github.com/huin/goupnp v1.3.0
 	github.com/illarion/gonotify/v3 v3.0.2
@@ -40,13 +42,18 @@ require (
 	github.com/mdlayher/genetlink v1.3.2
 	github.com/mdlayher/netlink v1.11.2
 	github.com/mdlayher/sdnotify v1.0.0
+	github.com/mdlayher/socket v0.6.0
 	github.com/mitchellh/go-ps v1.0.0
 	github.com/pires/go-proxyproto v0.8.1
 	github.com/prometheus/client_golang v1.23.2
 	github.com/safchain/ethtool v0.3.0
-	github.com/sagernet/sing v0.9.4-0.20260912053229-7776850263cd
+	github.com/sagernet/sing v0.9.5-0.20260917142815-f37989cadbf0
+	github.com/sagernet/sing-tun v0.9.6-0.20260925112405-97d11460f2ea
+	github.com/sagernet/wireguard-go v0.0.7-0.20260916054909-2da8d81dcd5e
 	github.com/skip2/go-qrcode v0.0.0-20200617195104-da1b6568686e
+	github.com/sourcegraph/go-diff v0.7.0
 	github.com/tailscale/certstore v0.1.1-0.20260409135935-3638fb84b77d
+	github.com/tailscale/go-winio v0.0.0-20231025203758-c4f33415bf55
 	github.com/tailscale/hujson v0.0.0-20260302212456-ecc657c15afd
 	github.com/tailscale/netlink v1.1.1-0.20240822203006-4d49adab4de7
 	github.com/tailscale/peercred v0.0.0-20250107143737-35a0c7bd7edc
@@ -63,28 +70,10 @@ require (
 	golang.org/x/sync v0.22.0
 	golang.org/x/sys v0.47.0
 	golang.org/x/term v0.45.0
+	golang.org/x/text v0.40.0
 	golang.org/x/time v0.15.0
 	golang.org/x/tools v0.47.0
 	golang.zx2c4.com/wireguard/windows v0.5.3
-)
-
-require (
-	github.com/mattn/go-colorable v0.1.15 // indirect
-	github.com/vishvananda/netns v0.0.5 // indirect
-	golang.zx2c4.com/wintun v0.0.0-20230126152724-0fa3db229ce2 // indirect
-	software.sslmate.com/src/go-pkcs12 v0.4.0 // indirect
-)
-
-require (
-	github.com/dgryski/go-metro v0.0.0-20180109044635-280f6062b5bc // indirect
-	github.com/florianl/go-nfqueue/v2 v2.1.0 // indirect
-	github.com/fsnotify/fsnotify v1.9.0 // indirect
-	github.com/golang/freetype v0.0.0-20170609003504-e2365dfdc4a0 // indirect
-	github.com/gorilla/securecookie v1.1.2 // indirect
-	github.com/prometheus/common v0.69.0 // indirect
-	github.com/sagernet/fswatch v0.1.2 // indirect
-	github.com/sagernet/netlink v0.0.0-20260814022025-64455d367bbf // indirect
-	github.com/sagernet/nftables v0.3.0-mod.4 // indirect
 )
 
 require (
@@ -92,24 +81,29 @@ require (
 	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/cespare/xxhash/v2 v2.3.0 // indirect
 	github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc // indirect
-	github.com/fatih/color v1.18.0
+	github.com/dgryski/go-metro v0.0.0-20180109044635-280f6062b5bc // indirect
+	github.com/florianl/go-nfqueue/v2 v2.1.0 // indirect
+	github.com/fsnotify/fsnotify v1.9.0 // indirect
+	github.com/golang/freetype v0.0.0-20170609003504-e2365dfdc4a0 // indirect
 	github.com/google/btree v1.1.3 // indirect
-	github.com/gorilla/csrf v1.7.3
-	github.com/mdlayher/socket v0.6.0
+	github.com/gorilla/securecookie v1.1.2 // indirect
+	github.com/mattn/go-colorable v0.1.15 // indirect
 	github.com/munnerz/goautoneg v0.0.0-20191010083416-a7dc8b61c822 // indirect
 	github.com/pierrec/lz4/v4 v4.1.26 // indirect
 	github.com/pmezard/go-difflib v1.0.1-0.20181226105442-5d4384ee4fb2 // indirect
 	github.com/prometheus/client_model v0.6.2 // indirect
+	github.com/prometheus/common v0.69.0 // indirect
 	github.com/prometheus/procfs v0.20.1 // indirect
 	github.com/rogpeppe/go-internal v1.14.1 // indirect
+	github.com/sagernet/fswatch v0.1.2 // indirect
 	github.com/sagernet/gvisor v0.0.0-20260727.0-sing-box-mod.1 // indirect
-	github.com/sagernet/sing-tun v0.9.4-0.20260916041232-89d2e01a748a
-	github.com/sagernet/wireguard-go v0.0.7-0.20260916054909-2da8d81dcd5e
-	github.com/sourcegraph/go-diff v0.7.0
-	github.com/tailscale/go-winio v0.0.0-20231025203758-c4f33415bf55
+	github.com/sagernet/netlink v0.0.0-20260814022025-64455d367bbf // indirect
+	github.com/sagernet/nftables v0.3.0-mod.4 // indirect
 	github.com/u-root/uio v0.0.0-20240224005618-d2acac8f3701 // indirect
+	github.com/vishvananda/netns v0.0.5 // indirect
 	github.com/x448/float16 v0.8.4 // indirect
 	golang.org/x/image v0.41.0 // indirect
-	golang.org/x/text v0.40.0
+	golang.zx2c4.com/wintun v0.0.0-20230126152724-0fa3db229ce2 // indirect
 	google.golang.org/protobuf v1.36.11 // indirect
+	software.sslmate.com/src/go-pkcs12 v0.4.0 // indirect
 )

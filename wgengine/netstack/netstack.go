@@ -223,7 +223,7 @@ func (ns *Impl) ListenPacket(network, address string) (net.PacketConn, error) {
 	return conn, nil
 }
 
-func (ns *Impl) inject(packets []*buf.Buffer) error {
+func (ns *Impl) inject(packets []*buf.Buffer) {
 	outbound := packets[:0]
 	for index, buffer := range packets {
 		var parsed packet.Parsed
@@ -241,10 +241,13 @@ func (ns *Impl) inject(packets []*buf.Buffer) error {
 		if err != nil {
 			buf.ReleaseMulti(outbound)
 			buf.ReleaseMulti(packets[index+1:])
-			return err
+			ns.logf("netstack inject: %v", err)
+			return
 		}
 	}
-	return ns.tundev.InjectOutboundBuffers(ns.ctx, outbound)
+	if err := ns.tundev.InjectOutboundBuffers(ns.ctx, outbound); err != nil {
+		ns.logf("netstack inject outbound: %v", err)
+	}
 }
 
 func (ns *Impl) shouldSendToHost(parsed *packet.Parsed) bool {
