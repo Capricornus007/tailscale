@@ -241,12 +241,13 @@ func (ns *Impl) inject(packets []*buf.Buffer) {
 		if err != nil {
 			buf.ReleaseMulti(outbound)
 			buf.ReleaseMulti(packets[index+1:])
-			ns.logf("netstack inject: %v", err)
+			ns.logf("[v2] netstack: inject: %v", err)
 			return
 		}
 	}
-	if err := ns.tundev.InjectOutboundBuffers(ns.ctx, outbound); err != nil {
-		ns.logf("netstack inject outbound: %v", err)
+	err := ns.tundev.InjectOutboundBuffers(ns.ctx, outbound)
+	if err != nil {
+		ns.logf("[v2] netstack: inject outbound: %v", err)
 	}
 }
 
